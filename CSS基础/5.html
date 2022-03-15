@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .jd {
+      position: relative;
+      width: 120px;
+      height: 249px;
+      background-color: salmon;
+    }
+    /* 
+    伪类选择器 
+    after 和 before 
+    */
+    .jd::after {
+      position: absolute;
+      content: "";
+      top: -10px;
+      left: 100px;
+      border: 5px solid transparent;
+      border-bottom-color: salmon;
+    }
+    textarea {
+      /* 文本域禁止拖拽 */
+      resize: none;
+      outline: none;
+    }
+    img {
+      width: 200px;
+      height: 150px;
+      /* 垂直对齐 */
+      vertical-align: middle;
+    }
+    .box1 {
+      width: 150px;
+      height: 65px;
+      background-color: pink;
+      margin: 100px auto;
+      text-indent: 20px;
+      /* 溢出的部分隐藏起来 */
+      overflow: hidden;
+      /* 溢出的部分使用省略号代替 */
+      text-overflow: ellipsis;
+      /* 弹性伸缩盒子模型显示 */
+      display: -webkit-box;
+      /* 显示在一个块元素显示的文本行数 */
+      -webkit-line-clamp: 3;
+      /* 设置或检索伸缩盒对象的子元素的排列方式 */
+      -webkit-box-orient: vertical;
+    }
+  </style>
+  <body>
+    <div class="box2"></div>
+    <div class="jd"></div>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <div>
+      <img src="img/abstract.png" alt="" />
+      222222
+    </div>
+    <div class="box1">毛远博你妈死了我草你麻痹的毛远博掉你妈的你麻痹此处省略一百万字</div>
+  </body>
+</html>

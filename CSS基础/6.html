@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    ul li {
+      width: 150px;
+      height: 200px;
+      border: 1px solid salmon;
+      float: left;
+      list-style: none;
+      margin-left: -1px;
+      position: relative;
+    }
+    ul li:hover {
+      /* 鼠标划过时提升层级 */
+      z-index: 99;
+      border: 1px solid black;
+    }
+    .box {
+      float: none;
+      width: 200px;
+      height: 200px;
+      border: 1px solid salmon;
+      margin-top: 200px;
+    }
+  </style>
+  <body>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+
+  </body>
+</html>

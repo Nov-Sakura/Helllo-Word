@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box {
+      text-align: center;
+    }
+    .box a {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: salmon;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+    }
+    .box .prev,
+    .box .next {
+      width: 85px;
+    }
+    .box2 {
+      width: 160px;
+      height: 30px;
+      border: 1px solid red;
+      line-height: 30px;
+      font-size: 14px;
+    }
+    .miaosha {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+      height: 31px;
+      width: 80px;
+      background-color: red;
+      color: white;
+      font-weight: 700;
+    }
+    .miaosha::after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 0px;
+      border-left: solid 15px transparent;
+      border-bottom: solid 30px white;
+
+      /* content: "";
+      width: 0;
+      height: 0;
+      
+      border-top: solid 15px transparent;
+      border-left: solid 15px black;
+      border-bottom: solid 15px transparent; */
+    }
+    .origin{
+        font-size: 12px;
+        color: gray;
+        text-decoration: line-through;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <a href="" class="prev">&lt;&lt;上一页</a>
+      <a href="">2</a>
+      <a href="">3</a>
+      <a href="">4</a>
+      <a href="">5</a>
+      <a href="">6</a>
+      <a href="">7</a>
+      <a href="">8</a>
+      <a href="" class="next">&gt;&gt;下一页</a>
+    </div>
+    <div class="box2">
+      <span class="miaosha"> ￥1650 </span>
+      <span class="origin">￥5650</span>
+    </div>
+  </body>
+</html>
