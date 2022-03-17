@@ -1,16 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- 引入初始化css -->
-    <link rel="stylesheet" href="./css/base.css">
-    <!-- 引入公共的css -->
-    <link rel="stylesheet" href="./css/common.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>品优购商城</title>
+    <!-- 网站说明 -->
+    <mate name="description" content="京东JD.COM-专业的综合网上购物商城">
+        <!-- 网站关键字 -->
+        <mate name="keywords" content="网上购物">
+            <!-- 引入初始化css -->
+            <link rel="stylesheet" href="./shoping/css/京东css初始化代码.css" />
+            <!-- 引入公共的css -->
+            <link rel="stylesheet" href="./shoping/css/common.css" />
+            <link rel="shortcut icon" type="" href="./shoping/images/bitbug_favicon.ico" />
+            <!-- 引入小图标icon -->
+            <link rel="stylesheet" href="https://i.icomoon.io/public/temp/5b06c5764b/UntitledProject/style.css">
+            <!-- 引入JQuery -->
+            <script crossorigin="anonymous"
+                integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+                src="https://lib.baomitu.com/jquery/3.6.0/jquery.js"></script>
 </head>
+
 <body>
-     
+    <!-- 快捷导航模块 -->
+    <section class="shortcut">
+        <div class="w">
+            <div class="f1">
+                <ul>
+                    <li>品优购欢迎您 &nbsp;</li>
+                    <li>
+                        <a href="#">请登录&nbsp;</a>
+                        <a href="#" class="style_red">免费注册</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="f2">
+                <ul>
+                    <li>我的订单</li>
+                    <li>|</li>
+                    <li class="arrow-icon">我的品优购</li>
+                    <li>|</li>
+                    <li>品优购会员</li>
+                    <li>|</li>
+                    <li>企业采购</li>
+                    <li>|</li>
+                    <li class="arrow-icon">关注品优购</li>
+                    <li>|</li>
+                    <li class="arrow-icon">客户服务</li>
+                    <li>|</li>
+                    <li class="arrow-icon">网站导航</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- 头部模块 -->
+    <header class="header">
+        <div class="w">
+<!-- logo模块 -->
+<div class="logo">
+    <h1>
+        <a href="index.html" title="品优购商城">品优购商城</a>
+    </h1>
+</div>
+<!-- 搜索模块 -->
+<div class="search">
+    <input type="search" class="query" placeholder="请输入搜索内容"><button>搜索</button>
+    <ul class="queryHint"></ul>
+</div>
+<!-- hotwords模块 -->
+<div class="hotwords">
+    <a href="#" class="style_red">优惠购首发</a>
+    <a href="#">一元优惠</a>
+    <a href="#">9.9元团购</a>
+    <a href="#">满99减30</a>
+    <a href="#">办公用品</a>
+    <a href="#">电脑</a>
+    <a href="#">通信</a>
+</div>
+<!-- 购物车 -->
+<div class="shopcar">
+    我的购物车
+    <i class="count">8</i>
+</div>
+        </div>
+        
+    </header>
+    <!-- nav模块制作 -->
+    <nav class="nav">
+        <div class="w">
+            <div class="borderBottom"></div>
+            <div class="dropdown">
+                <div class="dt">全部商品分类</div>
+                <div class="dd">
+                    <ul>
+                        <li><a href="#">家用电器</a></li>
+                        <li><a href="#">手机</a>、<a href="#">数码</a>、<a href="#">通信</a></li>
+                        <li><a href="#">电脑</a>、<a href="#">办公</a></li>
+                        <li><a href="#">家居</a>、<a href="#">家具</a>、<a href="#">家装</a>、<a href="#">厨具</a></li>
+                        <li><a href="#">男装</a>、<a href="#">女装</a>、<a href="#">童装</a>、<a href="#">内衣</a></li>
+                        <li><a href="#">美妆</a>、<a href="#">个护清洁</a>、<a href="#">宠物</a></li>
+                        <li><a href="#">鞋靴</a>、<a href="#">箱包</a>、<a href="#">珠宝</a>、<a href="#">奢侈品</a></li>
+                        <li><a href="#">运动户外</a>、<a href="#">钟表</a></li>
+                        <li><a href="#">汽车</a>、<a href="#">汽车用品</a></li>
+                        <li><a href="#">母婴</a>、<a href="#">玩具乐器</a></li>
+                        <li><a href="#">食品</a>、<a href="#">酒类</a>、<a href="#">生鲜</a>、<a href="#">特产</a></li>
+                        <li><a href="#">医药保健</a></li>
+                        <li><a href="#">图书</a>、<a href="#">音像</a>、<a href="#">电子书</a></li>
+                        <li><a href="#">彩票</a>、<a href="#">旅行</a>、<a href="#">充值</a>、<a href="#">票务</a></li>
+                        <li><a href="#">理财</a>、<a href="#">众筹</a>、<a href="#">白条</a>、<a href="#">保险</a></li>
+                        
+
+                    </ul>
+                </div>
+            </div>
+            <div class="navitems">
+                <ul>
+                    <li><a href="#">服装城</a></li>
+                    <li><a href="#">会员购</a></li>
+                    <li><a href="#">拍卖</a></li>
+                    <li><a href="#">品牌闪购</a></li>
+                    <li><a href="#">超市</a></li>
+                    <li><a href="#">国际</a></li>
+                    <li><a href="#">美妆馆</a></li>
+                    <li><a href="#">有趣</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 底部模块 -->
+    <footer class="footer">
+        <div class="w">
+            <!-- 服务模块 -->
+            <div class="mod_service">
+                <ul>
+                    <li>
+                        <h5 class="footerImg1"></h5>
+                        <div class="service_txt">
+                            <h4>正品保障</h4>
+                            <p>正品保障,提供发票</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="footerImg2"></h5>
+                        <div class="service_txt">
+                            <h4>极速物流</h4>
+                            <p>急速物流,急速送达</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="footerImg3"></h5>
+                        <div class="service_txt">
+                            <h4>无忧售后</h4>
+                            <p>7天内无理由退换货</p>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="footerImg4"></h5>
+                        <div class="service_txt">
+                            <h4>特色服务</h4>
+                            <p>私人订制家电套装</p>
+                        </div>
+                    </li>
+                    <li class="tai">
+                        <h5 class="footerImg5"></h5>
+                        <div class="service_txt">
+                            <h4>帮助中心</h4>
+                            <p>您的购物指南</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 帮助模块 -->
+            <div class="mod_help">
+                <dl>
+                    <dt>服务指南</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">会员介绍</a></dd>
+                    <dd><a href="#">生活旅行/团购</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">大家电</a></dd>
+                    <dd><a href="#">联系客服</a></dd>
+                </dl>
+                <dl>
+                    <dt>配送方式</dt>
+                    <dd><a href="#">上门自提</a></dd>
+                    <dd><a href="#">211限时达</a></dd>
+                    <dd><a href="#">配送服务查询</a></dd>
+                    <dd><a href="#">配送费收取标准</a></dd>
+                    <dd><a href="#">海外配送</a></dd>
+                </dl>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd><a href="#">货到付款</a></dd>
+                    <dd><a href="#">在线支付</a></dd>
+                    <dd><a href="#">分期付款</a></dd>
+                    <dd><a href="#">公司转账</a></dd>
+                </dl>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd><a href="#">售后政策</a></dd>
+                    <dd><a href="#">价格保护</a></dd>
+                    <dd><a href="#">退款说明</a></dd>
+                    <dd><a href="#">返修/退换货</a></dd>
+                    <dd><a href="#">取消订单</a></dd>
+                </dl>
+                <dl>
+                    <dt>特色服务</dt>
+                    <dd><a href="#">夺宝岛</a></dd>
+                    <dd><a href="#">DIY装机</a></dd>
+                    <dd><a href="#">延保服务</a></dd>
+                    <dd><a href="#">京东E卡</a></dd>
+                    <dd><a href="#">京东通信</a></dd>
+                    <dd><a href="#">京鱼座智能</a></dd>
+                </dl>
+                <dl class="">
+                    <dt>帮助中心</dt>
+                    <dd><img src="./shoping/images/wx_cz.jpg" alt=""></dd>
+                    <dd><a href="#">品优购客户端</a></dd>
+                </dl>
+            </div>
+        </div>
+    </footer>
 </body>
+<script>
+    let timer = null;
+    //当输入框的内容改变的时候 获取搜索关键字(输入的值)
+    const ipt = $(".query");
+    ipt.on("input", function () {
+        // 清除上个定时器
+        clearTimeout(timer);
+        let keyword = $(this).val();
+        // 当输入的内容为空时 清除ul并隐藏
+        if (keyword === "") {
+            $(".queryHint").empty().hide();
+            return;
+        }
+
+        timer = setTimeout(() => {
+            // 根据关键字 获取搜索建议列表数据
+            $.ajax({
+                url: "https://suggest.taobao.com/sug",
+                data: {
+                    q: keyword, //q表示搜索关键字
+                    code: "utf-8", //加入之后 可以搜索两个汉字
+                },
+                dataType: "jsonp",
+                success: function (res) {
+                    //   console.log(res);
+                    let str = "";
+                    // 便利淘宝发送的数据 并添加到str中
+                    res.result.forEach((item) => {
+                        str += `<li>${item[0]}</li>`;
+                    });
+                    // 把数据渲染到ul中
+                    $(".queryHint").html(str).show(); 
+                },
+            });
+        }, 500);
+    });
+    $('*').click(() => {
+        $('.queryHint').hide()
+    })
+</script>
+
 </html>
