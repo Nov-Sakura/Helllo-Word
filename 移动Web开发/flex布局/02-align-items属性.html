@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* flex特点
+        ·   子级不给宽度 会被内容撑开 不给高度 则会默认铺满父级容器
+        ·   
+      */
+    .box {
+      display: flex;
+      /* align-items的值 */
+      /* center 侧轴居中(垂直居中)*/
+      /* stretch 默认值  子级高度铺满父级容器(需要子级元素没有设置高度才会生效) */
+
+      justify-content: space-around;
+      height: 50px;
+      background-color: gray;
+    }
+    .box div {
+      background-color: pink;
+    }
+    /* 选择box下的第二个div */
+    .box div:nth-child(2) {
+      width: 30%;
+      height: 30px;
+      align-self: center;
+      background-color: pink;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <div>1222</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>

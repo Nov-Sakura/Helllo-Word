@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .box {
+        /* 视觉效果 子级一行排列/水平排列 */
+        /* 水平排列 默认主轴在水平方向 弹性盒子都是沿着主轴排列 */
+      display: flex;
+      /* justify-content 排列方式 */
+      /* center 子级居中 */
+      /* space-between 子级之间出现间距 */
+      /* around 子级的两侧出现间距 */
+      /* evenly 所有间距都相等 */
+      justify-content: space-around;
+      height: 200px;
+      border: 1px solid black;
+    }
+    .box div {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>
