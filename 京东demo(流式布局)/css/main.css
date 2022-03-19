@@ -1,0 +1,135 @@
+/* icon css代码 */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input {
+  outline: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: #fff;
+  font-size: 14px;
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+  color: #666;
+  background-color: #ccc;
+  line-height: 1.5;
+  height: 10000px;
+}
+/* 顶部 */
+.app {
+  height: 45px;
+}
+.app ul li {
+  height: 45px;
+  background-color: #333;
+  float: left;
+  text-align: center;
+  line-height: 45px;
+  color: white;
+  cursor: pointer;
+}
+.app ul li:nth-child(1) {
+  width: 10%;
+  font-size: 1px;
+}
+.app ul li:nth-child(2) {
+  font-size: 35px;
+  width: 14%;
+}
+
+.app ul li:nth-child(3) {
+  width: 51%;
+}
+.app ul li:nth-child(4) {
+  width: 25%;
+  background-color: #f53413;
+}
+/* 搜索 */
+.search-wrap {
+  height: 44px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  min-width: 320px;
+  max-width: 640px;
+}
+.search-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 44px;
+}
+.search-btn::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 18px;
+  background: url(../img/1.png) no-repeat;
+  background-size: 20px 18px;
+  margin: 14px 0 0 15px;
+}
+.search-login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 44px;
+  color: white;
+  line-height: 44px;
+}
+.search {
+  height: 30px;
+  background-color: salmon;
+  margin: 7px 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: white;
+  line-height: 30px;
+}
+.search-input-left-jd:nth-child(1) {
+  margin: 8px 8px 0 12px;
+  font-size: 15px;
+  position: relative;
+  color: red;
+}
+.search-input-left-jd:nth-child(1)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  background-color: #ccc;
+  position: absolute;
+  left: 20px;
+  top: 2px;
+}
+.search-input-left-jd:nth-child(2) {
+  margin: 8px 0px 0px 2px;
+}
+.search input {
+  border: none;
+  font-size: 12px;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+.slider img {
+  width: 100%;
+}
