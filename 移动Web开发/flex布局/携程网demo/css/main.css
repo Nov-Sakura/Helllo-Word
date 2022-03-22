@@ -1,0 +1,257 @@
+body {
+  font: normal 16px/1.5 PingFangSC-regular, Tahoma, Lucida Grande, Verdana,
+    Microsoft Yahei, STXihei, hei;
+  max-width: 540px;
+  min-width: 200px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  -webkit-tap-highlight-color: transparent;
+}
+.w {
+  width: 95%;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+
+/* 搜索模块 */
+.search-index {
+  /* 粘性定位 */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 200px;
+  max-width: 540px;
+  height: 44px;
+  display: flex;
+  background-color: #f6f6f6;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.search {
+  flex: 1;
+  height: 28px;
+  border: 1px solid gray;
+  align-self: center;
+  color: #999999;
+  text-indent: 4px;
+  line-height: 27px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.search::after {
+  content: "搜索:目的地/酒店/经典/航班号";
+  font-size: 14px;
+}
+.search span {
+  display: inline-block;
+  font-size: 14px;
+  color: #666666;
+}
+.user {
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  overflow: hidden;
+  margin-top: -2.5px;
+  margin-right: -4px;
+}
+.user span {
+  font-size: 25px;
+}
+.userIcon {
+  display: block;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -3px;
+}
+.user::after {
+  content: "我 的";
+  font-size: 14px;
+  overflow: hidden;
+  display: block;
+  margin-top: 5px;
+  text-indent: 2px;
+}
+/* 轮播图 */
+.focus {
+  width: 100%;
+  height: 145px;
+}
+.focus img {
+  width: 100%;
+  height: 100%;
+}
+/* 局部导航栏 */
+.local-nav {
+  width: 100%;
+  height: 64px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px 0 0 0;
+  padding: 0;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.local-nav li {
+  flex: 1;
+  font-size: 13px;
+}
+.local-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.local-nav span {
+  font-size: 25px;
+}
+/* 主导航栏 */
+.nav {
+  border-radius: 8px;
+  width: 100%;
+}
+.nav-common {
+  height: 88px;
+  background-color: pink;
+  display: flex;
+}
+.nav-common:nth-child(1) {
+  /* 背景渐变必须添加浏览器私有前缀 */
+  background: -webkit-linear-gradient(left, #f85954, #f89a4b);
+}
+.nav-common:nth-child(2) {
+  /* 背景渐变必须添加浏览器私有前缀 */
+  background: -webkit-linear-gradient(left, #4a8fec, #51bbeb);
+}
+.nav-common:nth-child(3) {
+  /* 背景渐变必须添加浏览器私有前缀 */
+  background: -webkit-linear-gradient(left, #32c2a6, #69d457);
+}
+.nav-common:nth-child(1) {
+  margin-top: 10px;
+  border-radius: 8px 8px 0 0;
+}
+.nav-common:nth-child(2) {
+  margin: 3px 0px;
+}
+.nav-common:nth-child(3) {
+  border-radius: 0px 0px 8px 8px;
+}
+.nav-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.nav-items a {
+  flex: 1;
+  color: white;
+  line-height: 44px;
+  font-size: 14px;
+  text-align: center;
+  /* 文字阴影 */
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.nav-items a {
+  border-bottom: 1px solid white;
+}
+.nav-items:nth-child(1) a:nth-child(1) {
+  border: none;
+}
+.nav-items:nth-child(1) a:nth-child(2) {
+  line-height: 38px;
+}
+.nav-items:nth-child(1) a:nth-child(1) span {
+  font-size: 35px;
+  display: inline-block;
+  margin-top: 10px;
+  flex: 1;
+}
+/* -n+2就是选择前俩个元素 */
+.nav-items:nth-child(-n + 2) {
+  border-right: 2px solid white;
+}
+/* 副导航栏 */
+.minNav {
+  width: 100%;
+  height: 128px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  margin: 10px 0 0 0;
+  padding: 0;
+  flex-direction: column;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.minNav div {
+  flex: 1;
+  display: flex;
+}
+.minNav li {
+  float: left;
+  flex: 1;
+  font-size: 13px;
+  margin: auto 0;
+}
+.minNav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.minNav span {
+  font-size: 15px;
+}
+.sales-box {
+  background-color: white;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+.sales-hd {
+  height: 44px;
+  position: relative;
+}
+.sales-hd h2 {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 20px;
+  color: #fb960f;
+  font-size: 16px;
+  width: 79px;
+  height: 25px;
+  margin: 0;
+}
+.sales-hd a {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: -webkit-linear-gradient(left, #fd506b, #ff68c2);
+  border-radius: 15px;
+  padding: 3px 5px 3px 8px;
+  font-size: 13px;
+  color: white;
+}
+.sales-hd a span {
+  font-size: 10px;
+}
+
+/* .sales-hd::after {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  content: "";
+  width: 79px;
+  height: 15px;
+  background-color: salmon;
+} */

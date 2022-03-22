@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .box {
+      margin: auto;
+      width: 1200px;
+      height: 500px;
+      background-color: salmon;
+      /* align-content 有多行子级元素时才会生效 */
+      /* 因为有了换行 此时我们侧轴上控制资源的对齐方式使用align-content */
+      /* 子级在侧轴的头部开始排列 */
+      /* align-content: flex-start; */
+      /* 子级元素往下 */
+      /* align-content: flex-end; */
+      /* 子级元素垂直居中 */
+      /* align-content: center; */
+      /* 上下两行紧贴 中间行居中 */
+      /* align-content: space-between; */
+      /* 子级上下出现间距 */
+      /* align-content: space-around; */
+      /* align-items: center; */
+      display: flex;
+      /* 设置y为主轴 */
+      /* flex-direction: column; */
+     align-content: space-around;
+      justify-content: space-around;
+      /* 换行 */
+      flex-wrap: wrap;
+    }
+    .box div {
+      width: 250px;
+      height: 150px;
+      margin: 10px;
+      background-color: skyblue;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </body>
+</html>

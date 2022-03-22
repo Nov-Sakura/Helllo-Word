@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    section {
+      display: flex;
+      width: 60%;
+      height: 550px;
+      background-color: pink;
+      margin: 0 auto;
+      flex-flow: column;
+      align-items: flex-end;
+    }
+    section div {
+      margin-left: 3px;
+      /* 分配空间 会自适应 */
+      flex: 1;
+    }
+    section div:nth-child(1) {
+      width: 100px;
+      height: 150px;
+      background-color: #fa8072;
+    }
+
+    section div:nth-child(2) {
+      width: 100px;
+      height: 150px;
+      flex: 2;
+      background-color: skyblue;
+      /* 控制当前子级在侧轴的排列方式 */
+      align-self: flex-start;
+      /* 定义元素的排列顺序 数值越小越靠前 */
+      order: -1;
+    }
+    section div:nth-child(3) {
+      width: 200px;
+      height: 150px;
+      background-color: seagreen;
+      flex: 1;
+    }
+  </style>
+  <body>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </body>
+</html>

@@ -1,28 +1,22 @@
-console.log(1)
-setTimeout(function() {
-  console.log(2)
-  new Promise(function(resolve) {
-    console.log(3)
-    resolve()
-  }).then(function() {
-    console.log(4)
-  })
-})
+var person = [
+  {
+    name: "张三",
+    sex: 1,
+  },
+  {
+    name: "李四",
+    sex: 0,
+  },
+  {
+    name: "王五",
+    sex: 0,
+  },
+];
 
-new Promise(function(resolve) {
-  console.log(5)
-  resolve()
-}).then(function() {
-  console.log(6)
-})
-
-setTimeout(function() {
-  console.log(7)
-  new Promise(function(resolve) {
-    console.log(8)
-    resolve()
-  }).then(function() {
-    console.log(9)
-  })
-})
-console.log(10)
+person.forEach(item => {
+  if (item.sex == 1) item.sex = "男";
+  else if (item.sex == 0) item.sex = "女";
+});
+person.forEach(i => {
+  console.log(i);
+});
