@@ -2,9 +2,11 @@ lockfileVersion: 5.3
 
 specifiers:
   express: ^4.17.3
+  postcss-pxtorem: ^6.0.0
 
 dependencies:
   express: mirrors.tencent.com/express/4.17.3
+  postcss-pxtorem: mirrors.tencent.com/postcss-pxtorem/6.0.0
 
 packages:
 
@@ -310,6 +312,14 @@ packages:
     resolution: {integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/path-to-regexp/-/path-to-regexp-0.1.7.tgz}
     name: path-to-regexp
     version: 0.1.7
+    dev: false
+
+  mirrors.tencent.com/postcss-pxtorem/6.0.0:
+    resolution: {integrity: sha512-ZRXrD7MLLjLk2RNGV6UA4f5Y7gy+a/j1EqjAfp9NdcNYVjUMvg5HTYduTjSkKBkRkfqbg/iKrjMO70V4g1LZeg==, registry: https://mirrors.cloud.tencent.com/npm/, tarball: https://mirrors.tencent.com/npm/postcss-pxtorem/-/postcss-pxtorem-6.0.0.tgz}
+    name: postcss-pxtorem
+    version: 6.0.0
+    peerDependencies:
+      postcss: ^8.0.0
     dev: false
 
   mirrors.tencent.com/proxy-addr/2.0.7:

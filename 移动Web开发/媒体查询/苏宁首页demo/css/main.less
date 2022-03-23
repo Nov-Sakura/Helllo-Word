@@ -1,0 +1,113 @@
+// 首页样式文件
+// 导入common.less
+@import "common";
+@baseFont: 50;
+@font-face {
+  font-family: "iconfont";
+  src: url("iconfont.ttf?t=1647567478465") format("truetype");
+}
+li {
+  list-style: none;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  min-width: 320px;
+  max-width: 15rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  height: 1000px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.search-content {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 15rem;
+  height: (88rem / @baseFont);
+  background-color: #ffc001;
+  display: flex;
+  a {
+    font-size: (30rem / @baseFont);
+  }
+  span {
+    font-size: (30rem / @baseFont);
+  }
+  .classify {
+    margin: 0 (12rem / @baseFont);
+    line-height: (88rem / @baseFont);
+  }
+  .search {
+    flex: 1;
+    div {
+      margin-top: (12rem / @baseFont);
+      height: (66rem / @baseFont);
+      line-height: (66rem / @baseFont);
+      background-color: #fff2cc;
+      color: #757575;
+      text-indent: 8px;
+      font-size: (30rem / @baseFont);
+      border-radius: (33rem / @baseFont);
+      overflow: hidden;
+      span {
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+  }
+  .login {
+    margin: 0 (12rem / @baseFont);
+    line-height: (88rem / @baseFont);
+  }
+}
+// banner部分
+.banner {
+  width: (750rem / @baseFont);
+  height: (368rem / @baseFont);
+  background-color: salmon;
+  font-size: (30rem / @baseFont);
+  text-align: center;
+  line-height: (368rem / @baseFont);
+}
+// 广告部分
+.ad {
+  width: (750rem / @baseFont);
+  height: (184rem / @baseFont);
+  background-color: skyblue;
+  font-size: (30rem / @baseFont);
+  text-align: center;
+  line-height: (184rem / @baseFont);
+}
+// 导航  
+.nav {
+  width: (750rem / @baseFont);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fcfffc;
+  li {
+    width: (150rem / @baseFont);
+    height: (140rem / @baseFont);
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    a {
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      span {
+        font-size: (30rem / @baseFont);
+      }
+    }
+  }
+}

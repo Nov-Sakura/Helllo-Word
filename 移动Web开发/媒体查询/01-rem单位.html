@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html {
+      font-size: 12px;
+    }
+    div {
+      font-size: 12px;
+      width: 15rem;
+      height: 15rem;
+      background-color: salmon;
+    }
+    p {
+      /* em是相对于父元素的字体大小来决定的 1em是父元素的字体大小 1em=12px */
+      /* rem是根据html的字体大小决定的 1rem=14px */
+      width: 10rem;
+      height: 10em;
+      background-color: pink;
+    }
+    /* rem的优点就是可以通过修改html里面的文字大小来改变页面中元素的大小 可以整体控制 */
+  </style>
+  <body>
+    <div>
+      <p></p>
+    </div>
+  </body>
+</html>

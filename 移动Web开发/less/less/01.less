@@ -1,0 +1,42 @@
+// 定义变量
+@a: #f8c4cb;
+@font14: 14px;
+@divColor: white;
+// 除法需要用括号括起来
+@rem: (5 / 5rem);
+// 运算加混合
+.border {
+  border-radius: 8px;
+  border: 5px+5 solid #ccc;
+}
+body {
+  background-color: @a;
+}
+div {
+  width: @rem;
+  height: 40px;
+  color: @divColor;
+  font-size: @font14;
+  .border();
+  /* 溢出的部分隐藏起来 */
+  overflow: hidden;
+  /* 溢出的部分使用省略号代替 */
+  text-overflow: ellipsis;
+  /* 弹性伸缩盒子模型显示 */
+  display: -webkit-box;
+  /* 显示在一个块元素显示的文本行数 */
+  -webkit-line-clamp: 2;
+  /* 设置或检索伸缩盒对象的子元素的排列方式 */
+  -webkit-box-orient: vertical;
+  background-color: seagreen;
+
+  // 嵌套 选择div中的a标签
+  a {
+    text-decoration: none;
+    color: @divColor;
+    // 使用伪类选择器 需要在前面加 & 符号
+    &:hover {
+      color: skyblue;
+    }
+  }
+}

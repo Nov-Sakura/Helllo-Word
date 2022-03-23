@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* 在我屏幕并且最大的宽度是800px 可以设置我们想要的样式 */
+    /* max-width 小于等于 */
+    /* min-width 大于等于 */
+    html {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 1200px) {
+      body {
+        background-color: skyblue;
+      }
+      html {
+        font-size: 15px;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      body {
+        background-color: salmon;
+      }
+      html {
+        font-size: 10px;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      body {
+        background-color: seagreen;
+      }
+      html {
+        font-size: 5px;
+      }
+    }
+    p {
+      font-size: 5rem;
+    }
+  </style>
+  <body>
+    <div>
+      <p>HHHHHHHHHHHHHHHHHHHHHH</p>
+    </div>
+  </body>
+</html>
