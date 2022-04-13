@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      list-style: none;
+    }
+    .login {
+      position: relative;
+      width: 100px;
+      height: 30px;
+      float: left;
+      margin-left: 20px;
+      text-align: center;
+      cursor: pointer;
+      line-height: 30px;
+    }
+    .login:hover {
+      background-color: #ccc;
+    }
+    .login ul {
+      position: absolute;
+      top: 31px;
+      left: 0px;
+      display: none;
+      width: 100%;
+    }
+    .login:hover ul {
+      display: block;
+    }
+    .login ul li:hover {
+      background-color: #ccc;
+      width: 100%;
+    }
+    .login li {
+      border: 1px solid skyblue;
+      border-top: 0px;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <span class="span"></span>
+      <p></p>
+    </div>
+    <div class="login">
+      登录
+      <ul>
+        <li>QQ登录</li>
+        <li>微信登录</li>
+        <li>手机号登录</li>
+      </ul>
+    </div>
+    <div class="login">
+      登录
+
+      <ul>
+        <li>QQ登录</li>
+        <li>微信登录</li>
+        <li>手机号登录</li>
+      </ul>
+    </div>
+    <div class="login">
+      登录
+
+      <ul>
+        <li>QQ登录</li>
+        <li>微信登录</li>
+        <li>手机号登录</li>
+      </ul>
+    </div>
+    <script>
+      let sp = document.querySelector(".span");
+      // 当前元素的父级节点 parentNode 找不到则返回null
+      console.log(sp.parentNode);
+      //   当前元素的子节点 childNodes[节点的类型] 包含元素节点 文本节点等等
+      // children 当前元素的元素节点
+      let box = document.querySelector(".box");
+      console.log(box.childNodes[1]);
+      console.log(box.children);
+      //   获取当前元素的第一个子节点 firstChild
+      console.log(box.firstChild);
+      //  获取当前元素的最后一个子节点 lastChild
+      console.log(box.lastChild);
+      //   获取当前元素的第一个元素子节点 firstElementChild
+      console.log(box.firstElementChild);
+      //   获取当前元素的最后一个元素子节点lastElementChild
+      console.log(box.lastElementChild);
+
+      //   实际开发的写法 没有兼容性问题
+      console.log(box.children[0]);
+      console.log(box.children[box.children.length - 1]);
+
+      //   得到下一个兄弟节点  nextSibling 包含元素和文本
+      console.log(box.nextSibling);
+      //   得到下一个兄弟元素节点 nextElementSibling
+      //   上一个兄弟元素节点 previousElementSibling
+      console.log(box.nextElementSibling);
+      console.log(box.previousElementSibling);
+
+      //   创建节点
+      let li = document.createElement("li");
+      //   父级最后添加节点 父级.appendChild(子级) 
+      box.appendChild(li);
+    </script>
+  </body>
+</html>

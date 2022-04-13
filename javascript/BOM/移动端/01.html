@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=  , initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 引入fastclick插件 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+  </head>
+  <body>
+    <!-- 移动端点击按钮时会有300ms的延迟 因为移动端双击屏幕会有一个300ms的判断
+            解决方案1 禁用缩放 user-scalable=no
+                <meta name="viewport" content="width=  , initial-scale=1.0, user-scalable=no">  />
+            解决方案2 
+                自己封装函数
+            解决方案3  fastclick插件 推荐使用
+                <script src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
+    -->
+    <button>222</button>
+  </body>
+  <script>
+    if ("addEventListener" in document) {
+      document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+          FastClick.attach(document.body);
+        },
+        false
+      );
+    }
+    let btn = document.querySelector("button");
+    btn.addEventListener("click", () => {
+      alert("222");
+    });
+  </script>
+</html>

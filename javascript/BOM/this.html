@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span></span>
+    <script>
+      // 谁调用 谁就是this
+      setTimeout(() => {
+        console.log(this);
+      });
+      //   构造函数this指向实例
+
+      //   获取uname
+      let uname = location.search;
+      //   1.去掉某个字符 substr(1~n)
+      uname.substr(1);
+      //  2. 分割字符串
+      let arr = uname.split("=");
+      // 3,渲染
+      let sp = document.querySelector("span");
+
+      sp.innerText = arr[1];
+    </script>
+  </body>
+</html>

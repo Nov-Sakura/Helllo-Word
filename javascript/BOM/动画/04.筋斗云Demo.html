@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: black;
+    }
+    li {
+      list-style: none;
+      float: left;
+      width: 120px;
+      height: 40px;
+      cursor: pointer;
+      text-align: center;
+    }
+    .c-nav {
+      width: 1200px;
+      height: 40px;
+      background-color: white;
+      position: relative;
+    }
+    .c-nav ul {
+      position: absolute;
+      top: -7px;
+    }
+    .cloud {
+      background-color: skyblue;
+      width: 120px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 40px;
+      z-index: 0;
+    }
+    .color {
+      color: seagreen;
+    }
+  </style>
+  <body>
+    <div class="c-nav">
+      <span class="cloud"></span>
+      <ul>
+        <li class="current">首页新闻</li>
+        <li>师资力量</li>
+        <li>互动策划</li>
+        <li>奇特文化</li>
+        <li>招聘信息</li>
+        <li>公司简介</li>
+        <li>你是哈批</li>
+      </ul>
+    </div>
+  </body>
+  <script src="./js/animate.js"></script>
+  <script>
+    let cloud = document.querySelector(".cloud");
+    let nav = document.querySelector(".c-nav");
+    let li = nav.querySelectorAll("li");
+    // 2.给所有的li绑定事件
+    // current作为筋斗云的起始位置
+    let current = 40;
+    for (i = 0; i < li.length; i++) {
+      // 鼠标到哪current到哪
+      li[i].addEventListener("mouseenter", function (e) {
+        animate(cloud, this.offsetLeft);
+      });
+      //   鼠标离开回到起始位置
+      li[i].addEventListener("mouseleave", function (e) {
+        animate(cloud, current);
+      });
+      li[i].addEventListener("click", function (e) {
+        current = this.offsetLeft;
+        for (i = 0; i < li.length; i++) {
+          li[i].className = "";
+        }
+        this.className = "color";
+      });
+    }
+    li[0].className = "color";
+  </script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style></style>
+  <body>
+    <input type="text" name="" value="" />
+    <script>
+      // 常用的键盘事件
+      // 1. keyup  按键弹起的时候触发
+      // document.onkeyup=function(){
+      //     console.log("on弹起");
+      // }
+
+      //   keyCode  获取按下的键ASCII码值
+      document.addEventListener("keyup", (e) => {
+        console.log("弹起", e.keyCode);
+      });
+
+      // 2. keydown 按下触发
+      document.addEventListener("keydown", () => {
+        console.log("keydwon");
+      });
+
+      //   keypress 按下触发 但不包括Crl Alt Tab 箭头等
+      document.addEventListener("keypress", (e) => {
+        console.log("keypress", e.keyCode);
+        switch (e.keyCode) {
+          case 65:
+            console.log("A");
+            break;
+          case 97:
+            console.log("a");
+
+          default:
+            break;
+        }
+      });
+
+      //   keyup和keydown都不区分字母大小写 a和A的ASCII码值是一样的
+      //   只有keypress区分
+
+      let ipt = document.querySelector("input");
+      document.addEventListener("keyup", (e) => {
+        e.keyCode == 83 ? ipt.focus() : null;
+      });
+    </script>
+  </body>
+</html>

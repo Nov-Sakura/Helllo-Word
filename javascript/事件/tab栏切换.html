@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    ul {
+      width: 340px;
+      position: relative;
+      top: 20px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    li {
+      list-style: none;
+      float: left;
+      width: 80px;
+      height: 30px;
+      background-color: salmon;
+      margin-left: 5px;
+      text-align: center;
+      line-height: 30px;
+    }
+    .public-li {
+      background-color: red;
+      color: white;
+    }
+    .tab_con {
+      position: absolute;
+      top: 30px;
+      left: 5px;
+      width: 100%;
+    }
+    .tab_con div {
+      display: none;
+      width: 100%;
+    }
+  </style>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <div class="tab_con">
+        <div>11111</div>
+        <div>22222</div>
+        <div>33333</div>
+        <div>44444</div>
+      </div>
+    </ul>
+  </body>
+  <script>
+    const li = document.querySelectorAll("ul li");
+    const tab_li = document.querySelectorAll(".tab_con div");
+    li[0].className = "public-li";
+    tab_li[0].style.display = "block";
+    // 封装
+    function fn(l) {
+      l = li[l];
+      //   显示div内容模块
+      for (i = 0; i < li.length; i++) {
+        li[i].className = "";
+      }
+      l.className = "public-li";
+
+      let index = l.getAttribute("index");
+      for (i = 0; i < tab_li.length; i++) {
+        tab_li[i].style.display = "none";
+        tab_li[index].style.display = "block";
+      }
+    }
+    var flag = false;
+    for (i = 0; i < li.length; i++) {
+      // 给五个li设置索引号
+      li[i].setAttribute("index", i);
+      li[i].addEventListener("click", function (e) {
+        //   获取当前元素的自定义属性 当前元素为被点击的li
+        let index = this.getAttribute("index");
+        fn(index);
+      });
+    }
+  </script>
+</html>

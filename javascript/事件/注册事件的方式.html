@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>传统</button>
+    <button>监听</button>
+    <button>事件对象event</button>
+    <a href="http://120.79.219.140:3000">Blog</a>
+  </body>
+  <script>
+    let btn = document.querySelectorAll("button");
+    //   传统方式注册事件 以on开头
+    btn[0].onclick = function () {
+      console.log("传统");
+      //   传统解绑事件
+      btn[0].onclick = null;
+    };
+    // 事件侦听注册事件
+    btn[1].addEventListener("click", fn);
+    function fn() {
+      console.log("监听");
+      //   事件侦听解绑事件
+      btn[1].removeEventListener("click", fn);
+    }
+
+    // 事件对象 event的属性和方法
+    // e.target 点击哪个元素 就返回哪个 this是绑定的哪个元素 就返回哪个
+    btn[2].addEventListener("click", (e) => {
+      console.log(e.type);
+      console.log(e.target);
+      console.log((e.target.innerHTML = "222"));
+    });
+
+    // 不能选中文字 selectstart
+    document.addEventListener("selectstart", (e) => {
+      e.preventDefault();
+    });
+
+    // 禁用右键菜单 contextmenu
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+    });
+
+    // 鼠标事件对象 MouseEvent
+    document.addEventListener("click", (e) => {
+      // 1. client 鼠标在可视区的x和y坐标 
+      console.log(e.clientX, e.clientY);
+    });
+
+    let a = document.querySelector("a");
+    // 阻止默认行为(事件) preventDefault() 让链接不跳转 或者提交按钮不提交
+    // 阻止事件冒泡 stopPropagation()
+    a.addEventListener("click", (e) => {
+      e.preventDefault(); // dom标准写法
+      e.stopPropagation();
+    });
+  </script>
+</html>

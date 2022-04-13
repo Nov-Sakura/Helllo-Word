@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>傻逼看这里</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .login {
+      width: 700px;
+      height: 300px;
+      background-color: white;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      text-align: center;
+      z-index: 99;
+      box-shadow: 0 0 3px 2px rgba(255 255 255 / 0.5);
+    }
+    .login-bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+    .close {
+      position: absolute;
+      top: -20px;
+      right: -10px;
+      width: 50px;
+      height: 50px;
+      color: rgb(80, 79, 79);
+      background-color: white;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50%;
+      border: 1px solid rgb(236, 236, 236);
+      cursor: default;
+    }
+
+    input {
+      border: 1px solid #ccc;
+      outline: none;
+      padding-left: 10px;
+      background-color: white;
+    }
+
+    .fl > input {
+      width: 400px;
+      height: 30px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .fl {
+      line-height: 30px;
+      margin-top: 30px;
+    }
+    .fl:nth-child(1) {
+    }
+
+    .bt {
+      margin-top: 30px;
+    }
+
+    .w {
+      width: 200px;
+      height: 50px;
+    }
+
+    .f {
+      margin-top: 30px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+    .title {
+      height: 60px;
+      line-height: 60px;
+    }
+  </style>
+  <body>
+    <a href="javascript:;" class="link">点击登录</a>
+    <div class="login">
+      <form action="1.html">
+        <div class="title">
+          <h3>登录会员</h3>
+        </div>
+        <div class="fl">
+          &nbsp;&nbsp;用户名:<input type="text" name="uname" />
+        </div>
+        <div class="fl">登录密码:<input type="password" name="" /></div>
+        <div class="f">
+          <input type="submit" name="" id="" value="登录会员" class="w" />
+        </div>
+      </form>
+      <div class="close">关闭</div>
+    </div>
+    <!-- 遮盖 -->
+    <div class="login-bg"></div>
+    <script>
+      let a = document.querySelector(".link");
+      let login = document.querySelector(".login");
+      let bg = document.querySelector(".login-bg");
+      let cl = document.querySelector(".close");
+      let t = document.querySelector(".title");
+      a.onclick = function () {
+        login.style.display = "block";
+        bg.style.display = "block";
+      };
+      cl.onclick = function () {
+        login.style.display = "none";
+        bg.style.display = "none";
+      };
+      t.addEventListener("mousedown", (e) => {
+        function move(e) {
+          login.style.left = e.pageX - x + "px";
+          login.style.top = e.pageY - y + "px";
+        }
+        let x = e.pageX - login.offsetLeft;
+        let y = e.pageY - login.offsetTop;
+        // 鼠标移动的时候 把鼠标在页面中的坐标 减去 鼠标在盒子内的坐标 就是盒子的left和top值
+        document.addEventListener("mousemove", move);
+        // 鼠标弹起 就让鼠标移动事件移除
+        document.addEventListener("mouseup", function () {
+          //mouseup鼠标弹起事件
+          document.removeEventListener("mousemove", move); //把获取鼠标事件删除
+        });
+      });
+    </script>
+  </body>
+</html>

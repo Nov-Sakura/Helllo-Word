@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/zy.media.min.css" />
+  </head>
+  <body>
+    <div class="zy_media" style="overflow: hidden; height: 520px">
+      <div class="zy_wrap">
+        <video
+          poster="test.jpg"
+          data-config='{"mediaTitle": "<疯狂动物城>--腾讯视频"}'
+          preload="none"
+          style="width: 920px; height: 520px"
+        >
+          <source src="./images/test.mp4" type="video/mp4" />
+          您的浏览器不支持HTML5视频
+        </video>
+      </div>
+      <div class="zy_controls" style="bottom: -45px">
+        <div class="zy_playpause_btn_play"></div>
+        <div class="zy_currenttime">00:00</div>
+        <div class="zy_timeline">
+          <div class="zy_timeline_slider">
+            <div class="zy_timeline_buffering" style="display: none"></div>
+            <div class="zy_timeline_loaded"></div>
+            <div class="zy_timeline_current"></div>
+            <div class="zy_timeline_handle"></div>
+          </div>
+        </div>
+        <div class="zy_time">01:00</div>
+        <div class="zy_fullscreen_btn"></div>
+        <div class="zy_playback_rate">
+          <ul class="zy_playback_rate_option" style="display: none">
+            <li>2</li>
+            <li>1.5</li>
+            <li class="active">1</li>
+            <li>0.75</li>
+            <li>0.5</li>
+          </ul>
+          <div class="zy_playback_rate_val">X1</div>
+        </div>
+      </div>
+      <div class="zy_title" style="top: -35px"><疯狂动物城>--腾讯视频</div>
+      <div class="dec_loading" style="display: none"></div>
+      <div class="dec_error" style="display: none">播放失败,请重试</div>
+      <div class="dec_play"></div>
+    </div>
+
+    <script src="./js/zy.media.min.js"></script>
+    <script>
+      zymedia("video", {
+        autoplay: true,
+      });
+    </script>
+  </body>
+</html>

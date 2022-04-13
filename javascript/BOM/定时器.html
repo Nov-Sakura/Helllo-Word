@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+    }
+    div span {
+      margin-top: 20px;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin-left: 20px;
+      background-color: rgb(17, 16, 16);
+      color: white;
+      font-size: 18px;
+      text-align: center;
+      line-height: 60px;
+    }
+    button {
+      outline: none;
+    }
+  </style>
+  <body>
+    <div>
+      <span class="d"></span>
+      <span class="h"></span>
+      <span class="m"></span>
+      <span class="s"></span>
+    </div>
+
+    <div><input type="text" name="" value="" /><button>获取</button></div>
+
+    <script>
+      // 倒计时
+      function countDown(time) {
+        let sp = document.querySelectorAll("div span");
+
+        let nowTime = +new Date(); //返回当前时间毫秒数
+        let iptTime = +new Date(time); // 输入事件毫秒数
+        let times = (iptTime - nowTime) / 1000; //times是剩余时间总的秒数
+        let d = parseInt(times / 60 / 60 / 24); //天
+        let h = parseInt((times / 60 / 60) % 24); //时
+        let m = parseInt((times / 60) % 60); //分
+        let s = parseInt(times % 60); //秒
+
+        sp[0].innerHTML = d + "天";
+        sp[1].innerHTML = h + "时";
+        sp[2].innerHTML = m + "分";
+        sp[3].innerHTML = s + "秒";
+      }
+      setTimeout(() => {
+        countDown("2022/5/17 00:00:00");
+      }, 1);
+      setInterval(() => {
+        countDown("2022/5/17 00:00:00");
+      }, 1000);
+
+      //   获取验证码
+      let ipt = document.querySelector("input");
+      let btn = document.querySelector("button");
+
+      btn.addEventListener("click", () => {
+        btn.disabled = true;
+        let s = 10;
+        setTimeout(() => {
+          btn.innerText = "还剩" + s + "秒再次点击";
+          s--;
+        }, 0);
+        let time = setInterval(() => {
+          if (s == 0) {
+            btn.innerText = "获取";
+            clearInterval(time);
+            btn.disabled = false;
+          } else {
+            btn.innerText = "还剩" + s + "秒再次点击";
+            s--;
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

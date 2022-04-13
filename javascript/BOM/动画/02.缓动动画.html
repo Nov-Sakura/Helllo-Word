@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      position: relative;
+    }
+    span {
+      position: absolute;
+
+      top: 220px;
+    }
+  </style>
+  <body>
+    <div></div>
+    <span>222</span>
+    <button>移动</button>
+    <button>后退</button>
+    <script>
+      // 动画原理
+      // 1.获取盒子当前位置
+      // 2.让盒子在当前位置加上一个移动距离
+      // 3.利用定时器不断重复这个操作
+      // 4.加一个结束定时器的条件
+      // 5.注意此元素需要添加定位 才能使用element.style.left
+
+      let div = document.querySelector("div");
+      let span = document.querySelector("span");
+      const btn = document.querySelectorAll("button");
+      //   简单动画封装函数 obj目标对象 target 目标位置
+      //   xxx.timer 不同的元素各自的定时器
+      function animate(obj, target, callback) {
+        //   检查有没有函数传递 有则运行 没有则null
+        callback ? callback() : null;
+        //   不断点击按钮 元素的速度会越来越快 因为开启了太多定时器
+        // 让元素只有一个定时器
+        clearInterval(obj.timer);
+        obj.timer = setInterval(() => {
+          let step = (target - obj.offsetLeft) / 10;
+          //   判断是前进还是后退 前进取大 后退取小
+          step = step > 0 ? Math.ceil(step) : Math.floor(step);
+          if (obj.offsetLeft == target) {
+            //   停止动画 本质就是停止定时器
+            clearInterval(obj.timer);
+          }
+          //   修改步长值 公式(目标值-现在的位置)/10 
+          obj.style.left = obj.offsetLeft + step + "px";
+        }, 30);
+      }
+      btn[0].addEventListener("click", (e) => {
+        animate(span, 500, () => {
+          span.style.color = "blue";
+        });
+      });
+      btn[1].addEventListener("click", (e) => {
+        animate(span, 0, () => {
+          span.style.color = "black";
+        });
+      });
+      //   匀速就是 盒子当前位置+ 固定的值 10px
+      //   缓动动画就是 盒子当前的位置+ 变化的值 公式 (目标值-现在的位置)/10
+      //   floor()往小取整 ceil()往大取整
+    </script>
+  </body>
+</html>

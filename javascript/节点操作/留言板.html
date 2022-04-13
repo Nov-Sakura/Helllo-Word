@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./font_icon/iconfont.css" />
+  </head>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    @font-face {
+      font-family: "iconfont"; /* Project id  */
+      src: url("iconfont.ttf?t=1648197449109") format("truetype");
+    }
+
+    .iconfont {
+      font-family: "iconfont" !important;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: #ccc;
+    }
+    li {
+      list-style: none;
+    }
+    .box {
+      width: 50vw;
+      height: 30vh;
+      background-color: white;
+      margin: auto;
+      box-sizing: border-box;
+      margin-top: 20px;
+    }
+    .ipt {
+      width: 100%;
+      border: 1px solid black;
+      box-sizing: border-box;
+      outline: none;
+      height: 100%;
+      resize: none;
+    }
+    .btn {
+      box-sizing: border-box;
+      margin-top: 10px;
+      width: 20%;
+      height: 30px;
+      border: 0;
+      border-radius: 5px;
+      background-color: #4e6ef2;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      float: right;
+    }
+    .btn2 {
+      box-sizing: border-box;
+      margin-top: 10px;
+      width: 20%;
+      height: 30px;
+      border: 0;
+      border-radius: 5px;
+      background-color: #4e6ef2;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+      float: left;
+    }
+    .ul {
+      width: 50vw;
+      height: 100vh;
+      background-color: white;
+      margin: auto;
+      margin-top: 60px;
+      padding: 0px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+    .ul li {
+      position: relative;
+      margin-top: 5px;
+      font-size: 16px;
+      background-color: #e9e9e9;
+      height: 30px;
+      line-height: 30px;
+    }
+    .delete {
+      box-sizing: border-box;
+      height: 29px;
+      position: absolute;
+      top: 1px;
+      right: 0px;
+      width: 10%;
+      background-color: #4e6ef2;
+      color: white;
+      border: 0;
+      border-radius: 5px;
+    }
+    .ul span {
+      position: absolute;
+      top: 1px;
+      right: 80px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    /* .ul span::before {
+      content: "\e870";
+    } */
+  </style>
+  <body>
+    <div class="box">
+      <textarea class="ipt" rows="" cols=""></textarea>
+      <div>
+        <button class="btn">提交</button>
+        <button class="btn2">撤销</button>
+      </div>
+    </div>
+    <ul class="ul"></ul>
+
+    <script>
+      let box = document.querySelector(".box");
+      let ipt = document.querySelector(".ipt");
+      let btn = document.querySelectorAll(".box button");
+      let ul = document.querySelector(".ul");
+
+      btn[0].onclick = () => {
+        if (ipt.value === "") {
+          alert("请输入内容!");
+        } else {
+          let li = document.createElement("li");
+          li.innerHTML =
+            ipt.value +
+            "<span class='iconfont'>&#xe871;</span>" +
+            "<button class='delete'>删除</button>";
+          ul.appendChild(li);
+          ipt.value = "";
+          //   删除
+          let del = document.querySelectorAll(".ul button");
+          // 点赞
+          let sp = document.querySelectorAll(".ul span");
+          for (i = 0; i < del.length; i++) {
+            del[i].onclick = function () {
+              //   删除li this.parentNode
+              //   删除ul内的当前元素的父级节点
+              ul.removeChild(this.parentNode);
+            };
+          }
+          for (i = 0; i < sp.length; i++) {
+            sp[i].onclick = function () {
+              this.innerHTML = "&#xe870;";
+            };
+          }
+        }
+      };
+      btn[1].onclick = () => {
+        ipt.value = "";
+      };
+    </script>
+  </body>
+</html>

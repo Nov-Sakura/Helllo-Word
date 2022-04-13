@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: salmon;
+      overflow: hidden;
+      position: relative;
+    }
+    div div {
+      width: 50px;
+      height: 50px;
+      background-color: skyblue;
+      margin: 20px;
+    }
+  </style>
+  <body>
+    <div>
+      <div></div>
+    </div>
+    <script>
+      //  offset系列 可以得到元素的偏移 位置 返回的不带单位的数值
+      let div = document.querySelectorAll("div");
+      console.log(div[0].offsetLeft);
+      console.log(div[0].offsetTop);
+      //   子元素以带有定位的父元素为准 如果父元素没有定位 则以body为准
+      console.log(div[1].offsetLeft);
+      console.log(div[1].offsetTop);
+      //   返回父级元素 没有则返回body
+      console.log(div[1].offsetParent);
+
+      //   返回自身的高度和宽度 包括内边距 边框 内容区
+      console.log(div[0].offsetWidth);
+      console.log(div[0].offsetHeight);
+
+      //   offsetWidth和style.width的区别
+      //   1.style只能获取行内样式表的值 offset都可以获取
+      //   2.style带有单位 offset不带单位
+      //   3.style不包括内边距和边框 offset包括
+      //   4.style可以获取也可以赋值 offset只能读取 不能赋值
+
+      //   获取鼠标在div内的坐标
+      div[0].addEventListener("mousemove", (e) => {
+        const x = e.pageX - div[0].offsetLeft;
+        const y = e.pageY - div[0].offsetTop;
+        div[0].innerText = "x坐标是" + x + "y坐标是" + y;
+      });
+    </script>
+  </body>
+</html>

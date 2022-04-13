@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background-color: #e8e3e2;
+    }
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .w {
+      width: 1200px;
+      height: 500px;
+      background-color: salmon;
+      overflow: auto;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+    .w:nth-child(3) {
+      height: 800px;
+    }
+    .fixed {
+      width: 60px;
+      height: 200px;
+      background-color: white;
+      position: absolute;
+      top: 500px;
+      left: 1400px;
+      border-radius: 8px;
+    }
+    .goBack {
+      width: 100%;
+      height: 33%;
+      line-height: 66.66px;
+      display: block;
+      /* display: none; */
+      font-size: 14px;
+      border-bottom: 1px solid black;
+      cursor: pointer;
+    }
+    .goBack:hover {
+      background-color: #ff7f12;
+      color: white;
+      font-weight: 700;
+    }
+    .goBack:nth-child(3) {
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="fixed">
+      <span class="goBack">优惠活动</span>
+      <span class="goBack">会员直购</span>
+      <span class="goBack">返回顶部</span>
+    </div>
+    <div class="w">1</div>
+    <div class="w">2</div>
+    <div class="w">3</div>
+    <script src="./js/animate.js"></script>
+    <script>
+      const div = document.querySelector("div");
+      const f = document.querySelector(".fixed");
+      const body = document.querySelector("body");
+      const sp = document.querySelectorAll(".goBack");
+      //   scroll不包含边框 包含内边距 返回自身实际的高度
+      //   window.pageYoffset 得到页面上下的元素滚动值
+      //   window.pageoXffset 得到页面左右的元素滚动值
+      div.addEventListener("scroll", (e) => {
+        console.log(Math.floor(div.scrollTop));
+        const s = Math.floor(div.scrollTop);
+        s == 100 ? (div.style.backgroundColor = "red") : null;
+      });
+
+      document.addEventListener("scroll", (e) => {
+        if (window.pageYOffset >= 500) {
+          sp[2].style.display = "block  ";
+          f.style.position = "fixed";
+          f.style.top = 0 + "px";
+        } else {
+          sp[2].style.display = "none";
+          f.style.position = "absolute";
+          f.style.top = 500 + "px";
+        }
+      });
+      sp[2].onclick = function () {
+        animate(window, 0);
+      };
+    </script>
+  </body>
+</html>

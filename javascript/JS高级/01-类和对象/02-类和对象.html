@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="btn">点击</button>
+    <p class="text"></p>
+    <script>
+      // 1.创建类 class 创建一个 明星类
+      //    通过class定义类 类名首字母大写
+      //    类里面有个constructor函数 接收传递过来的参数 返回实例对象
+      //    constructor函数 只要new实例 就会自动调用 不写 类也会自动生成这个函数
+      //    生成实例 new 不能忽略
+
+      // 类的注意事项:
+      //    类没有变量提升 必须先定义类 才能通过类实例化对象
+      //    类里面共有的属性和方法一定要加this使用
+      let that;
+      class Person {
+        constructor(uname, age) {
+          // constructor内的this指向创建的实例对象
+          that = this;
+          this.uname = uname;
+          this.age = age;
+          this.text = document.querySelector(".text");
+          this.btn = document.querySelector(".btn");
+          this.btn.onclick = this.fn;
+        }
+        // 创建方法
+        // 方法内的this指向这个方法的调用者
+        sing(song) {
+          console.log(this.uname + ":" + song);
+        }
+        //
+        fn() {
+          //that内存储的是constructor里面的this
+          console.log(that.uname); //7 因为最后创建的实例对象的uname为7
+        }
+        //
+        sum() {
+          console.log(this.uname + this.age);
+        }
+      }
+      // 类的继承 extends
+      class Student extends Person {
+        // super() 可以调用父类中的构造函数和普通函数
+        // super.xx() 调用父类中的xx函数
+        subtract() {
+          console.log(this.uname - this.age);
+        }
+      }
+
+      // 2. 利用类创建对象
+      let zxy = new Person("曾翔宇");
+      console.log(zxy.uname);
+      zxy.sing("星星");
+
+      console.log(that === zxy); //true
+
+      // Student继承了Person
+      let hpk = new Student("何平康", "12");
+      hpk.sing("叮当");
+      hpk.sum(); // 何平康 12
+      console.log(hpk);
+      // 父类的加 子类的减
+      let son = new Student(7, 5);
+      son.subtract();
+      son.sum();
+    </script>
+  </body>
+</html>

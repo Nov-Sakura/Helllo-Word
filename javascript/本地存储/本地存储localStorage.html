@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    属性名:
+    <input type="text" name="" value="" />
+    <br />
+    值:
+    <input type="text" name="" value="" />
+    <br />
+    <button class="set">存储数据</button>
+    <br />
+    要获取的属性名:
+    <input type="text" name="" value="" />
+    <br />
+    <button class="get">获取数据</button>
+    <br />
+    要删除的属性名:
+    <input type="text" name="" value="" />
+    <br />
+    <button class="remove">删除数据</button>
+    <br />
+    <button class="del">清空所有数据</button>
+  </body>
+  <script>
+    // localStorage 本地存储 生命周期永久 除非手动删除 否则关闭页面也会存在
+    // 同一浏览器可以多个页面共享数据
+    // 以键值对的形式存储使用
+    let ipt = document.querySelectorAll("input");
+    let btn = document.querySelectorAll("button");
+    btn[0].addEventListener("click", () => {
+      let val1 = ipt[0].value;
+      let val2 = ipt[1].value;
+      localStorage.setItem(val1, val2);
+    });
+    btn[1].addEventListener("click", () => {
+      //   getItem(x) 获取会话存储内的x属性
+      let val = ipt[2].value;
+      console.log(localStorage.getItem(val));
+    });
+    btn[2].addEventListener("click", (e) => {
+      let val = ipt[3].value;
+      localStorage.removeItem(val);
+    });
+    btn[3].addEventListener("click", () => {
+      localStorage.clear();
+    });
+  </script>
+</html>

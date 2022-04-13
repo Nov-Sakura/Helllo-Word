@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    用户名:<input type="text" /> 记住用户名:<input type="checkbox" />
+    <br />
+    <script>
+      let ipt = document.querySelectorAll("input");
+      //   判断有没有本地存储内有没有uname属性
+      //   有就赋值给ipt[0] 反之ipt[0]=""
+      if (localStorage.getItem("uname")) {
+        ipt[0].value = localStorage.getItem("uname");
+        ipt[1].checked = true;
+      } else {
+        ipt[0].value = "";
+      }
+      //   是否记住用户名
+      ipt[1].addEventListener("click", function (e) {
+        if (this.checked) {
+          // 是就将用户名存储为uname
+          localStorage.setItem("uname", ipt[0].value);
+        } else {
+          // 否则讲uname变量删除
+          localStorage.removeItem("uname");
+        }
+      });
+    </script>
+  </body>
+</html>
